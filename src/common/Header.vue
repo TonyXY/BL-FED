@@ -1,29 +1,25 @@
 <template>
-	<Menu mode="horizontal" :theme="theme1" active-name="1">
-		<div class="main-width">
-		<div class="layout-logo">
-			<a href="javascript:void(0)">
-				<img src="images/logo.png" alt="">
-			</a>
-		</div>
-		<div class="layout-nav">
-			<Menu-item name="1">
-				<Icon type="ios-navigate"></Icon>
-				笔记
-			</Menu-item>
-			<Menu-item name="2">
-				<Icon type="ios-keypad"></Icon>
-				文章
-			</Menu-item>
-			<Menu-item name="3">
-				<Icon type="ios-analytics"></Icon>
-				关于
-			</Menu-item>
-			<Menu-item name="4">
-				<Icon type="ios-paper"></Icon>
-				导航四
-			</Menu-item>
-		</div>
+	<Menu mode="horizontal" :theme="theme" active-name="1" @on-select="goPage">
+		<div class="main-width layout-top">
+			<div class="layout-logo">
+				<router-link to="/">
+					<img src="images/logo.png" alt="">
+				</router-link>
+			</div>
+			<div class="layout-nav">
+				<Menu-item name="Notes">
+					<Icon type="ios-navigate"></Icon>
+					笔记
+				</Menu-item>
+				<Menu-item name="Article">
+					<Icon type="ios-keypad"></Icon>
+					文章
+				</Menu-item>
+				<Menu-item name="About">
+					<Icon type="ios-analytics"></Icon>
+					关于
+				</Menu-item>
+			</div>
 		</div>
 	</Menu>
 </template>
@@ -33,7 +29,16 @@ export default {
 	name: 'header',
 	data() {
 		return {
-			theme1: 'light'
+			theme: 'light'
+		}
+	},
+	created(){
+	},
+	mounted(){
+	},
+	methods:{
+		goPage(name){
+			this.$router.push('/'+name);
 		}
 	}
 }

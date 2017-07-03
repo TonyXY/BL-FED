@@ -1,6 +1,6 @@
 <template>
-	<div class="layout-content">
-		<Row>
+	<div class="main-width">
+		<Row class="layout-content">
 			<i-col span="24">
 				<div class="layout-content-main">
 					<router-view></router-view>

@@ -29,10 +29,12 @@ body{
 }
 .main-width{
     position: relative;
-    height: 100%;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+}
+.layout-top{
+    height: 100%;
 }
 .layout-logo {
     position: relative;
@@ -59,6 +61,9 @@ body{
 .layout-nav {
     height: 60px;
     margin: 0 auto;
+    a{
+        color:inherit;
+    }
 }
 
 .layout-assistant {

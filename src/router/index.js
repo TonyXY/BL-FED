@@ -4,22 +4,22 @@ import axios from 'axios'
 import Header from '@/common/Header'
 import Main from '@/common/Main'
 import Footer from '@/common/Footer'
-// import Home from '@/components/Home'
-// import About from '@/components/About'
 
-Vue.use(Router)
+Vue.use(Router);
 
-
-axios.get('http://localhost:3000/dist/online/dev/assets/mockdata/cardInfo.json')
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-// const Home = r => require.ensure([], () => r(require('@/components/Home.vue')), 'home');
-// const About = r => require.ensure([], () => r(require('@/components/About.vue')), 'about');
-var pages = ["Home","About"];
+// axios.get('http://localhost:3000/dist/online/dev/assets/mockdata/cardInfo.json')
+//   .then(function (response) {
+//     console.log(response);
+//   })
+//   .catch(function (error) {
+//     console.log(error);
+//   });
+var pages = [
+    "Home",
+    "About",
+    "Notes",
+    "Article"
+];
 var children = [];
 pages.forEach((p) => {
     children.push({
@@ -44,12 +44,5 @@ export default new Router({
             default: Main
         },
         children:children
-        // children: [{
-        //     path: '/Home',
-        //     component: Home
-        // }, {
-        //     path: '/About',
-        //     component: About
-        // }]
     }]
 })

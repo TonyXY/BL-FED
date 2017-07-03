@@ -6,7 +6,7 @@ import iView from 'iview';
 import App from './App';
 import router from './router';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 Vue.use(iView);
 const store = new Vuex.Store({
     state: {
@@ -22,10 +22,11 @@ router.afterEach(() => {
     iView.LoadingBar.finish();
     window.scrollTo(0, 0);
 });
-new Vue({
+const myApp = new Vue({
     el: '#app',
     store,
     router,
     template: '<App/>',
     components: { App }
 });
+
