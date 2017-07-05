@@ -1,6 +1,58 @@
 <template>
     <div>
-        I'm the notes page
+        <Row :gutter="16">
+            <Col span="12">
+                <Card>
+                    <p slot="title">
+                        <Icon type="ios-film-outline"></Icon>
+                        Css
+                    </p>
+                    <ul class="bl-list">
+                        <li v-for="item in movieList" :key="item.id">
+                            <a :href="item.url" target="_blank">{{ item.name }}</a>
+                            <span>
+                                {{ item.date }}
+                            </span>
+                        </li>
+                    </ul>
+                </Card>
+            </Col>
+            <Col span="12">
+                <Card>
+                    <p slot="title">
+                        <Icon type="ios-film-outline"></Icon>
+                        JavaScript
+                    </p>
+                    <ul class="bl-list">
+                        <li v-for="item in movieList" :key="item.id">
+                            <a :href="item.url" target="_blank">{{ item.name }}</a>
+                            <span>
+                                {{ item.date }}
+                            </span>
+                        </li>
+                    </ul>
+                </Card>
+            </Col>
+        </Row><br>
+        <Row :gutter="16">
+            <Col span="12">
+                <Card>
+                    <p slot="title">
+                        <Icon type="ios-film-outline"></Icon>
+                        HTML
+                    </p>
+                    <ul class="bl-list">
+                        <li v-for="item in movieList" :key="item.id">
+                            <a :href="item.url" target="_blank">{{ item.name }}</a>
+                            <span>
+                                {{ item.date }}
+                            </span>
+                        </li>
+                    </ul>
+                </Card>
+            </Col>
+        </Row>
+    
     </div>
 </template>
 
@@ -8,31 +60,51 @@
 export default {
     data() {
         return {
-            percent: 0
+            movieList: [
+                {
+                    id: 1,
+                    name: '肖申克的救赎',
+                    url: 'https://movie.douban.com/subject/1292052/',
+                    date: 9.6
+                },
+                {
+                    id: 2,
+                    name: '这个杀手不太冷',
+                    url: 'https://movie.douban.com/subject/1295644/',
+                    date: 9.4
+                },
+                {
+                    id: 3,
+                    name: '霸王别姬',
+                    url: 'https://movie.douban.com/subject/1291546/',
+                    date: 9.5
+                },
+                {
+                    id: 3,
+                    name: '阿甘正传',
+                    url: 'https://movie.douban.com/subject/1292720/',
+                    date: 9.4
+                },
+                {
+                    id: 4,
+                    name: '美丽人生',
+                    url: 'https://movie.douban.com/subject/1292063/',
+                    date: 9.5
+                },
+                {
+                    id: 5,
+                    name: '千与千寻',
+                    url: 'https://movie.douban.com/subject/1291561/',
+                    date: 9.2
+                }
+            ]
         }
     },
     computed: {
-        color() {
-            let color = '#2db7f5';
-            if (this.percent == 100) {
-                color = '#5cb85c';
-            }
-            return color;
-        }
+
     },
     methods: {
-        add() {
-            if (this.percent >= 100) {
-                return false;
-            }
-            this.percent += 10;
-        },
-        minus() {
-            if (this.percent <= 0) {
-                return false;
-            }
-            this.percent -= 10;
-        }
+
     }
 }
 </script>
