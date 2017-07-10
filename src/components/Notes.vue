@@ -9,7 +9,7 @@
                     </p>
                     <ul class="bl-list">
                         <li v-for="item in movieList" :key="item.id">
-                            <a :href="item.url" target="_blank">{{ item.name }}</a>
+                            <router-link to="Notes/Detail" target="_blank">{{ item.name }}</router-link>
                             <span>
                                 {{ item.date }}
                             </span>
@@ -51,6 +51,22 @@
                     </ul>
                 </Card>
             </Col>
+            <Col span="12">
+                <Card>
+                    <p slot="title">
+                        <Icon type="ios-film-outline"></Icon>
+                        其他
+                    </p>
+                    <ul class="bl-list">
+                        <li v-for="item in movieList" :key="item.id">
+                            <a :href="item.url" target="_blank">{{ item.name }}</a>
+                            <span>
+                                {{ item.date }}
+                            </span>
+                        </li>
+                    </ul>
+                </Card>
+            </Col>
         </Row>
     
     </div>
@@ -63,9 +79,9 @@ export default {
             movieList: [
                 {
                     id: 1,
-                    name: '肖申克的救赎',
+                    name: '常用地址',
                     url: 'https://movie.douban.com/subject/1292052/',
-                    date: 9.6
+                    date: '2017-07-11'
                 },
                 {
                     id: 2,
