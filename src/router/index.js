@@ -1,19 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import axios from 'axios'
+import marked from 'marked'
 import Header from '@/common/Header'
 import Main from '@/common/Main'
 import Footer from '@/common/Footer'
-
+window.axios = axios;
+window.marked = marked;
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitize: false,
+  smartLists: true,
+  smartypants: false,
+  highlight: function (code) {
+    return require('highlight.js').highlightAuto(code).value;
+  }
+});
 Vue.use(Router);
-
-// axios.get('http://localhost:3000/dist/online/dev/assets/mockdata/cardInfo.json')
-//   .then(function (response) {
-//     console.log(response);
-//   })
-//   .catch(function (error) {
-//     console.log(error);
-//   });
 var pages = [{
     menuName: '首页',
     menuUrl: 'Home',

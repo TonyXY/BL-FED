@@ -1,5 +1,6 @@
 @import "reset.scss";
 @import './assets/css/iview/iview.css';
+@import './assets/css/atom-one-light.css';
 // rem 单位换算：定为 75px 只是方便运算，750px-75px、640-64px、1080px-108px，如此类推
 $vm_fontsize: 75; // iPhone 6尺寸的根元素大小基准值
 @function rem($px) {
@@ -120,3 +121,23 @@ body {
         margin-top: 8px;
     }
 }
+
+.markdown-content{
+    font-size: rem(10);
+    line-height: 1.4;
+    a {
+        color: #42b983;
+        font-weight: 600;
+    }
+    blockquote {
+        margin: 8px 0 15px;
+        padding-left: 10px;
+        border-left: 4px solid #42b983;
+        p{
+            font-weight: 600;
+            margin-left: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    }
+} 

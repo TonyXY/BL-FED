@@ -9,7 +9,7 @@
                     </p>
                     <ul class="bl-list">
                         <li v-for="item in movieList" :key="item.id">
-                            <router-link to="Notes/Detail" target="_blank">{{ item.name }}</router-link>
+                            <router-link to="Notes/Detail">{{ item.name }}</router-link>
                             <span>
                                 {{ item.date }}
                             </span>
