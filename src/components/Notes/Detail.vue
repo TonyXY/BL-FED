@@ -11,6 +11,17 @@ export default {
            rawHtml:''
         }
     },
+    beforeRouteEnter (to, from, next) {
+        axios.get('docs/Notes/'+to.params.plan+'.md')
+        .then(function (response) {
+            next(vm => {
+                vm.rawHtml = marked(response.data);
+            })
+        })
+        .catch(function (error) {
+            next(false)
+        });
+    },
     computed: {
 
     },
@@ -18,15 +29,7 @@ export default {
 
     },
     created:function(){
-        var self = this;
-        axios.get('docs/Notes/commURL.md')
-        .then(function (response) {
-            console.log(response);
-            self.rawHtml = marked(response.data);
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+        
     }
 }
 </script>

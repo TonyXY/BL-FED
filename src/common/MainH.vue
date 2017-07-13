@@ -3,16 +3,10 @@
 		<Row class="layout-content">
 			<i-col span="24">
 				<div class="layout-content-main">
-					<Breadcrumb separator=">">
-						<Breadcrumb-item v-for="item in breadcrumb" :href="item.path" :key="item.path">
-							{{ item.name }}
-						</Breadcrumb-item>
-					</Breadcrumb>
 					<router-view></router-view>
 				</div>
 			</i-col>
 		</Row>
-	
 		<Back-top :height="30" :bottom="60">
 			<div class="top">返回顶端</div>
 		</Back-top>
@@ -24,24 +18,17 @@ export default {
 	name: 'main',
 	data() {
 		return {
-			breadcrumb:[]
+
 		}
-	},
-	created(){
-		console.log(this);
 	}
 }
 </script>
-<style lang="scss">
-@import "../assets/css/scss/common.scss";
+<style scoped>
 .top {
 	padding: 10px;
 	background: rgba(0, 153, 229, .7);
 	color: #fff;
 	text-align: center;
 	border-radius: 2px;
-}
-.ivu-breadcrumb{
-	margin-bottom: rem(10);
 }
 </style>

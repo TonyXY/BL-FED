@@ -5,7 +5,6 @@ import Vuex from 'vuex';
 import iView from 'iview';
 import App from './App';
 import router from './router';
-
 Vue.use(Vuex);
 Vue.use(iView);
 const store = new Vuex.Store({
@@ -18,6 +17,9 @@ const store = new Vuex.Store({
     }
 })
 Vue.config.productionTip = false;
+// router.beforeEach((to, from, next) => {
+//   // to 和 from 都是 路由信息对象
+// })
 router.afterEach(() => {
     iView.LoadingBar.finish();
     window.scrollTo(0, 0);
