@@ -3,9 +3,10 @@
 		<Row class="layout-content">
 			<i-col span="24">
 				<div class="layout-content-main">
-					<Breadcrumb separator=">">
+					<Breadcrumb separator=">" v-show="breadcrumb.length>0">
 						<Breadcrumb-item v-for="item in breadcrumb" :href="item.path" :key="item.path">
 							{{ item.name }}
+							
 						</Breadcrumb-item>
 					</Breadcrumb>
 					<router-view></router-view>
@@ -24,11 +25,14 @@ export default {
 	name: 'main',
 	data() {
 		return {
-			breadcrumb:[]
+		}
+	},
+	computed: {
+		breadcrumb () {
+			return store.state.breadcrumb;
 		}
 	},
 	created(){
-		console.log(this);
 	}
 }
 </script>

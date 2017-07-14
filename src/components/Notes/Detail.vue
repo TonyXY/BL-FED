@@ -15,7 +15,9 @@ export default {
         axios.get('docs/Notes/'+to.params.plan+'.md')
         .then(function (response) {
             next(vm => {
+                console.log(vm.$parent);
                 vm.rawHtml = marked(response.data);
+                // vm.$parent.breadcrumb = to.meta.breadcrumb;
             })
         })
         .catch(function (error) {

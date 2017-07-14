@@ -7,9 +7,9 @@ import App from './App';
 import router from './router';
 Vue.use(Vuex);
 Vue.use(iView);
-const store = new Vuex.Store({
+window.store = new Vuex.Store({
     state: {
-        count: 0
+        breadcrumb: []
     },
     mutations: {
         // increment: state => state.count++,
@@ -20,6 +20,16 @@ Vue.config.productionTip = false;
 // router.beforeEach((to, from, next) => {
 //   // to 和 from 都是 路由信息对象
 // })
+router.beforeEach((to, from, next)=>{
+    console.log(to);
+    console.log(store);
+    if(to.meta.breadcrumb){
+        store.state.breadcrumb = to.meta.breadcrumb;
+    }else{
+        store.state.breadcrumb = [];
+    }
+    next();
+});
 router.afterEach(() => {
     iView.LoadingBar.finish();
     window.scrollTo(0, 0);

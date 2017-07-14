@@ -40,7 +40,7 @@ function getRouteObj(level, breadMenu) {
         if (p.menuName != '首页') {
             currBread.push({
                 name: p.menuName,
-                path: p.path
+                path: '/'+p.path
             });
         }
         let pArr = p.path.split('/:');
@@ -74,13 +74,6 @@ export default new Router({
             header: Header,
             footer: Footer,
             default: Main
-        },
-        beforeEnter: function(to, from, next){
-            console.log(to);
-            console.log(Main)
-            next(vm => {
-                vm.breadcrumb = to.meta.breadcrumb;
-            })
         },
         children: children
     }, {
