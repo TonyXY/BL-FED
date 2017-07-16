@@ -86,15 +86,17 @@ export default {
                 },
                 {
                     id: 2,
-                    name: '这个杀手不太冷',
-                    url: 'https://movie.douban.com/subject/1295644/',
-                    date: 9.4
+                    name: '常用Css',
+                    pname:'Notes/Detail',
+                    plan: 'commonUseCss',
+                    date: '2017-07-16'
                 },
                 {
                     id: 3,
-                    name: '霸王别姬',
-                    url: 'https://movie.douban.com/subject/1291546/',
-                    date: 9.5
+                    name: '常用JavaScript',
+                    pname:'Notes/Detail',
+                    plan: 'commonUseJs',
+                    date: '2017-07-16'
                 },
                 {
                     id: 3,

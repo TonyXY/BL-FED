@@ -117,6 +117,17 @@ body {
 .markdown-content{
     font-size: rem(10);
     line-height: 1.4;
+    h2{
+        margin-bottom: rem(8);
+    }
+    code{
+        padding:rem(8);
+        margin: rem(4) 0 rem(8);
+        display: block;
+        background: rgb(247, 247, 247);
+        max-height: 4rem;
+        overflow: scroll;
+    }
     a {
         color: #42b983;
         font-weight: 600;

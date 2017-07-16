@@ -77,12 +77,17 @@ export default new Router({
         },
         children: children
     }, {
-        name:'Home',
-        path: '/Home',
+        path: '/Dashboard2',
+        redirect: '/Home',
         components: {
             header: Header,
             footer: Footer,
             default: MainH
-        }
+        },
+        children: [{
+            name: 'Home',
+            path: '/Home',
+            component: resolve => require(['@/components/Home.vue'], resolve)
+        }]
     }]
 })
