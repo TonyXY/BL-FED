@@ -21,8 +21,7 @@ Vue.config.productionTip = false;
 //   // to 和 from 都是 路由信息对象
 // })
 router.beforeEach((to, from, next)=>{
-    console.log(to);
-    console.log(store);
+    iView.LoadingBar.start();
     if(to.meta.breadcrumb){
         store.state.breadcrumb = to.meta.breadcrumb;
     }else{
