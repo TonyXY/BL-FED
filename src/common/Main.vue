@@ -14,7 +14,7 @@
 			</i-col>
 		</Row>
 	
-		<Back-top :height="30" :bottom="60">
+		<Back-top :height="30" :bottom="30">
 			<div class="top">返回顶端</div>
 		</Back-top>
 	</div>

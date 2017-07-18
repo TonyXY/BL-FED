@@ -69,6 +69,181 @@
             </Card>
             </Col>
         </Row>
+        <br>
+        <Row :gutter="16">
+            <Col span="12">
+            <Card>
+                <p slot="title">
+                    <Icon type="ios-film-outline"></Icon>
+                    HTML
+                </p>
+                <ul class="bl-list">
+                    <li v-for="item in movieList" :key="item.id">
+                        <a :href="item.url" target="_blank">{{ item.name }}</a>
+                        <span>
+                            {{ item.date }}
+                        </span>
+                    </li>
+                </ul>
+            </Card>
+            </Col>
+            <Col span="12">
+            <Card>
+                <p slot="title">
+                    <Icon type="ios-film-outline"></Icon>
+                    其他
+                </p>
+                <ul class="bl-list">
+                    <li v-for="item in movieList" :key="item.id">
+                        <a :href="item.url" target="_blank">{{ item.name }}</a>
+                        <span>
+                            {{ item.date }}
+                        </span>
+                    </li>
+                </ul>
+            </Card>
+            </Col>
+        </Row>
+        <br>
+        <Row :gutter="16">
+            <Col span="12">
+            <Card>
+                <p slot="title">
+                    <Icon type="ios-film-outline"></Icon>
+                    HTML
+                </p>
+                <ul class="bl-list">
+                    <li v-for="item in movieList" :key="item.id">
+                        <a :href="item.url" target="_blank">{{ item.name }}</a>
+                        <span>
+                            {{ item.date }}
+                        </span>
+                    </li>
+                </ul>
+            </Card>
+            </Col>
+            <Col span="12">
+            <Card>
+                <p slot="title">
+                    <Icon type="ios-film-outline"></Icon>
+                    其他
+                </p>
+                <ul class="bl-list">
+                    <li v-for="item in movieList" :key="item.id">
+                        <a :href="item.url" target="_blank">{{ item.name }}</a>
+                        <span>
+                            {{ item.date }}
+                        </span>
+                    </li>
+                </ul>
+            </Card>
+            </Col>
+        </Row>
+        <br>
+        <Row :gutter="16">
+            <Col span="12">
+            <Card>
+                <p slot="title">
+                    <Icon type="ios-film-outline"></Icon>
+                    HTML
+                </p>
+                <ul class="bl-list">
+                    <li v-for="item in movieList" :key="item.id">
+                        <a :href="item.url" target="_blank">{{ item.name }}</a>
+                        <span>
+                            {{ item.date }}
+                        </span>
+                    </li>
+                </ul>
+            </Card>
+            </Col>
+            <Col span="12">
+            <Card>
+                <p slot="title">
+                    <Icon type="ios-film-outline"></Icon>
+                    其他
+                </p>
+                <ul class="bl-list">
+                    <li v-for="item in movieList" :key="item.id">
+                        <a :href="item.url" target="_blank">{{ item.name }}</a>
+                        <span>
+                            {{ item.date }}
+                        </span>
+                    </li>
+                </ul>
+            </Card>
+            </Col>
+        </Row>
+        <br>
+        <Row :gutter="16">
+            <Col span="12">
+            <Card>
+                <p slot="title">
+                    <Icon type="ios-film-outline"></Icon>
+                    HTML
+                </p>
+                <ul class="bl-list">
+                    <li v-for="item in movieList" :key="item.id">
+                        <a :href="item.url" target="_blank">{{ item.name }}</a>
+                        <span>
+                            {{ item.date }}
+                        </span>
+                    </li>
+                </ul>
+            </Card>
+            </Col>
+            <Col span="12">
+            <Card>
+                <p slot="title">
+                    <Icon type="ios-film-outline"></Icon>
+                    其他
+                </p>
+                <ul class="bl-list">
+                    <li v-for="item in movieList" :key="item.id">
+                        <a :href="item.url" target="_blank">{{ item.name }}</a>
+                        <span>
+                            {{ item.date }}
+                        </span>
+                    </li>
+                </ul>
+            </Card>
+            </Col>
+        </Row>
+        <br>
+        <Row :gutter="16">
+            <Col span="12">
+            <Card>
+                <p slot="title">
+                    <Icon type="ios-film-outline"></Icon>
+                    HTML
+                </p>
+                <ul class="bl-list">
+                    <li v-for="item in movieList" :key="item.id">
+                        <a :href="item.url" target="_blank">{{ item.name }}</a>
+                        <span>
+                            {{ item.date }}
+                        </span>
+                    </li>
+                </ul>
+            </Card>
+            </Col>
+            <Col span="12">
+            <Card>
+                <p slot="title">
+                    <Icon type="ios-film-outline"></Icon>
+                    其他
+                </p>
+                <ul class="bl-list">
+                    <li v-for="item in movieList" :key="item.id">
+                        <a :href="item.url" target="_blank">{{ item.name }}</a>
+                        <span>
+                            {{ item.date }}
+                        </span>
+                    </li>
+                </ul>
+            </Card>
+            </Col>
+        </Row>
     </div>
 </template>
 

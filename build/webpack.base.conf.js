@@ -46,7 +46,7 @@ module.exports = function() {
                     loader: 'url-loader',
                     query: {
                         limit: 10000,
-                        name: utils.assetsPath('/css/fonts/[name].[hash:7].[ext]')
+                        name: utils.assetsPath('css/fonts/[name].[hash:7].[ext]')
                     }
                 },{
                     test: /\.css$/,

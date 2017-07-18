@@ -7,7 +7,7 @@ module.exports = {
         index: path.resolve(__dirname, '../dist/prod/index.html'),
         assetsRoot: path.resolve(__dirname, '../dist/prod'),
         assetsSubDirectory: '',
-        assetsPublicPath: '',
+        assetsPublicPath: '/',
         productionSourceMap: true,
         // Gzip off by default as many popular static hosts such as
         // Surge or Netlify already gzip all static assets for you.
@@ -28,7 +28,7 @@ module.exports = {
         assetsRoot: path.resolve(__dirname, '../dist/dev'),
         autoOpenBrowser: true,//自动打开浏览器
         closeWebSecurity:false,//是否打开chrome安全模式
-        assetsSubDirectory: '',
+        assetsSubDirectory: './',
         assetsPublicPath: '/',
         proxyTable: {},
         // CSS Sourcemaps off by default because relative paths are "buggy"
