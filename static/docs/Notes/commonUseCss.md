@@ -1,6 +1,7 @@
+[//]: # (2017-07-16 css)
 ## 常用css
 
-### 硬件加速:
+### 1.硬件加速:
 ``` css
 .hwACC {
 	//硬件加速css
@@ -9,48 +10,48 @@
 }
 ```
 
-### meta相关:
+### 2.meta相关:
 ``` html
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
 <meta name="format-detection" content="telephone=no"/>
 <meta name="format-detection" content="email=no"/>
 ```
 
-### 快速滚动和回弹的效果:
+### 3.快速滚动和回弹的效果:
 ``` css
 {
     -webkit-overflow-scrolling:touch;
 }
 ```
 
-### 移动端字体:
+### 4.移动端字体:
 ``` css
 body {font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif; /*使用无衬线字体*/}
 ```
 
-### 禁止长按链接与图片弹出菜单:
+### 5.禁止长按链接与图片弹出菜单:
 ``` css
 a, img { -webkit-touch-callout: none; }
 ```
-### 去掉a、input和button点击时的蓝色外边框和灰色半透明背景:
+### 6.去掉a、input和button点击时的蓝色外边框和灰色半透明背景:
 ``` css
 a,button,input,optgroup,select,textarea {-webkit-tap-highlight-color:rgba(0,0,0,0); }
 ```
-### 修改input的planceholder样式:
+### 7.修改input的planceholder样式:
 ``` css
 input::-webkit-input-placeholder {color:#ccc;}
 ```
-### 修改表单获取焦点时的样式:
+### 8.修改表单获取焦点时的样式:
 ``` css
 input[type=text]:focus, input[type=password]:focus { border: 2px solid#f00;outline: none;}
 ```
-### 用CSS实现省略号文字截断:
+### 9.用CSS实现省略号文字截断:
 ``` css
 {
     white-space: nowrap;text-overflow: ellipsis;
 }
 ```
-### 常用的CSS命名规则:
+### 10.常用的CSS命名规则:
 ``` js
 //    头：header
 //    内容：content/container

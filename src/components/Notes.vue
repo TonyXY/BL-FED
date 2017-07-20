@@ -8,7 +8,7 @@
                     Css
                 </p>
                 <ul class="bl-list">
-                    <li v-for="item in movieList" :key="item.id">
+                    <li v-for="item in cssList" :key="item.id">
                         <router-link :to="{name:item.pname,params: { plan: item.plan }}">{{ item.name }}</router-link>
                         <span>
                             {{ item.date }}
@@ -24,8 +24,8 @@
                     JavaScript
                 </p>
                 <ul class="bl-list">
-                    <li v-for="item in movieList" :key="item.id">
-                        <a :href="item.url" target="_blank">{{ item.name }}</a>
+                    <li v-for="item in jsList" :key="item.id">
+                        <router-link :to="{name:item.pname,params: { plan: item.plan }}">{{ item.name }}</router-link>
                         <span>
                             {{ item.date }}
                         </span>
@@ -43,8 +43,8 @@
                     HTML
                 </p>
                 <ul class="bl-list">
-                    <li v-for="item in movieList" :key="item.id">
-                        <a :href="item.url" target="_blank">{{ item.name }}</a>
+                    <li v-for="item in htmlList" :key="item.id">
+                        <router-link :to="{name:item.pname,params: { plan: item.plan }}">{{ item.name }}</router-link>
                         <span>
                             {{ item.date }}
                         </span>
@@ -59,8 +59,8 @@
                     其他
                 </p>
                 <ul class="bl-list">
-                    <li v-for="item in movieList" :key="item.id">
-                        <a :href="item.url" target="_blank">{{ item.name }}</a>
+                    <li v-for="item in otherList" :key="item.id">
+                        <router-link :to="{name:item.pname,params: { plan: item.plan }}">{{ item.name }}</router-link>
                         <span>
                             {{ item.date }}
                         </span>
@@ -70,180 +70,6 @@
             </Col>
         </Row>
         <br>
-        <Row :gutter="16">
-            <Col span="12">
-            <Card>
-                <p slot="title">
-                    <Icon type="ios-film-outline"></Icon>
-                    HTML
-                </p>
-                <ul class="bl-list">
-                    <li v-for="item in movieList" :key="item.id">
-                        <a :href="item.url" target="_blank">{{ item.name }}</a>
-                        <span>
-                            {{ item.date }}
-                        </span>
-                    </li>
-                </ul>
-            </Card>
-            </Col>
-            <Col span="12">
-            <Card>
-                <p slot="title">
-                    <Icon type="ios-film-outline"></Icon>
-                    其他
-                </p>
-                <ul class="bl-list">
-                    <li v-for="item in movieList" :key="item.id">
-                        <a :href="item.url" target="_blank">{{ item.name }}</a>
-                        <span>
-                            {{ item.date }}
-                        </span>
-                    </li>
-                </ul>
-            </Card>
-            </Col>
-        </Row>
-        <br>
-        <Row :gutter="16">
-            <Col span="12">
-            <Card>
-                <p slot="title">
-                    <Icon type="ios-film-outline"></Icon>
-                    HTML
-                </p>
-                <ul class="bl-list">
-                    <li v-for="item in movieList" :key="item.id">
-                        <a :href="item.url" target="_blank">{{ item.name }}</a>
-                        <span>
-                            {{ item.date }}
-                        </span>
-                    </li>
-                </ul>
-            </Card>
-            </Col>
-            <Col span="12">
-            <Card>
-                <p slot="title">
-                    <Icon type="ios-film-outline"></Icon>
-                    其他
-                </p>
-                <ul class="bl-list">
-                    <li v-for="item in movieList" :key="item.id">
-                        <a :href="item.url" target="_blank">{{ item.name }}</a>
-                        <span>
-                            {{ item.date }}
-                        </span>
-                    </li>
-                </ul>
-            </Card>
-            </Col>
-        </Row>
-        <br>
-        <Row :gutter="16">
-            <Col span="12">
-            <Card>
-                <p slot="title">
-                    <Icon type="ios-film-outline"></Icon>
-                    HTML
-                </p>
-                <ul class="bl-list">
-                    <li v-for="item in movieList" :key="item.id">
-                        <a :href="item.url" target="_blank">{{ item.name }}</a>
-                        <span>
-                            {{ item.date }}
-                        </span>
-                    </li>
-                </ul>
-            </Card>
-            </Col>
-            <Col span="12">
-            <Card>
-                <p slot="title">
-                    <Icon type="ios-film-outline"></Icon>
-                    其他
-                </p>
-                <ul class="bl-list">
-                    <li v-for="item in movieList" :key="item.id">
-                        <a :href="item.url" target="_blank">{{ item.name }}</a>
-                        <span>
-                            {{ item.date }}
-                        </span>
-                    </li>
-                </ul>
-            </Card>
-            </Col>
-        </Row>
-        <br>
-        <Row :gutter="16">
-            <Col span="12">
-            <Card>
-                <p slot="title">
-                    <Icon type="ios-film-outline"></Icon>
-                    HTML
-                </p>
-                <ul class="bl-list">
-                    <li v-for="item in movieList" :key="item.id">
-                        <a :href="item.url" target="_blank">{{ item.name }}</a>
-                        <span>
-                            {{ item.date }}
-                        </span>
-                    </li>
-                </ul>
-            </Card>
-            </Col>
-            <Col span="12">
-            <Card>
-                <p slot="title">
-                    <Icon type="ios-film-outline"></Icon>
-                    其他
-                </p>
-                <ul class="bl-list">
-                    <li v-for="item in movieList" :key="item.id">
-                        <a :href="item.url" target="_blank">{{ item.name }}</a>
-                        <span>
-                            {{ item.date }}
-                        </span>
-                    </li>
-                </ul>
-            </Card>
-            </Col>
-        </Row>
-        <br>
-        <Row :gutter="16">
-            <Col span="12">
-            <Card>
-                <p slot="title">
-                    <Icon type="ios-film-outline"></Icon>
-                    HTML
-                </p>
-                <ul class="bl-list">
-                    <li v-for="item in movieList" :key="item.id">
-                        <a :href="item.url" target="_blank">{{ item.name }}</a>
-                        <span>
-                            {{ item.date }}
-                        </span>
-                    </li>
-                </ul>
-            </Card>
-            </Col>
-            <Col span="12">
-            <Card>
-                <p slot="title">
-                    <Icon type="ios-film-outline"></Icon>
-                    其他
-                </p>
-                <ul class="bl-list">
-                    <li v-for="item in movieList" :key="item.id">
-                        <a :href="item.url" target="_blank">{{ item.name }}</a>
-                        <span>
-                            {{ item.date }}
-                        </span>
-                    </li>
-                </ul>
-            </Card>
-            </Col>
-        </Row>
     </div>
 </template>
 
@@ -272,24 +98,56 @@ export default {
                     pname:'Notes/Detail',
                     plan: 'commonUseJs',
                     date: '2017-07-16'
+                }
+            ],
+            cssList: [
+                {
+                    id: 1,
+                    name: '常用地址',
+                    pname:'Notes/Detail',
+                    plan: 'commURL',
+                    date: '2017-07-11'
                 },
                 {
-                    id: 3,
-                    name: '阿甘正传',
-                    url: 'https://movie.douban.com/subject/1292720/',
-                    date: 9.4
+                    id: 2,
+                    name: '常用Css',
+                    pname:'Notes/Detail',
+                    plan: 'commonUseCss',
+                    date: '2017-07-16'
+                }
+            ],
+            jsList: [
+                {
+                    id: 1,
+                    name: '常用JavaScript',
+                    pname:'Notes/Detail',
+                    plan: 'commonUseJs',
+                    date: '2017-07-16'
+                }
+            ],
+            htmlList: [
+                {
+                    id: 1,
+                    name: '常用select切换html结构及js',
+                    pname:'Notes/Detail',
+                    plan: 'selectHtml',
+                    date: '2017-07-20'
                 },
                 {
-                    id: 4,
-                    name: '美丽人生',
-                    url: 'https://movie.douban.com/subject/1292063/',
-                    date: 9.5
-                },
+                    id: 2,
+                    name: '常用tab切换html结构及js',
+                    pname:'Notes/Detail',
+                    plan: 'tabHtml',
+                    date: '2017-07-19'
+                }
+            ],
+            otherList: [
                 {
-                    id: 5,
-                    name: '千与千寻',
-                    url: 'https://movie.douban.com/subject/1291561/',
-                    date: 9.2
+                    id: 1,
+                    name: 'mac使用的一些经验',
+                    pname:'Notes/Detail',
+                    plan: 'macUse',
+                    date: '2017-07-19'
                 }
             ]
         }
