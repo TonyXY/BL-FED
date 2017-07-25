@@ -5,6 +5,8 @@ import Vuex from 'vuex';
 import iView from 'iview';
 import App from './App';
 import router from './router';
+import config from './config/api';
+console.log(config);
 Vue.use(Vuex);
 Vue.use(iView);
 window.store = new Vuex.Store({
