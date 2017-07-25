@@ -12,7 +12,11 @@ const pages = [{
 }, {
     menuName: '文章',
     path: 'Article',
-    menuChilds: []
+    menuChilds: [{
+        menuName: '文章详情',
+        path: 'Articles/Detail/:plan',
+        menuChilds: []
+    }]
 }, {
     menuName: '关于',
     path: 'About',

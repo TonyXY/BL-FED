@@ -1,6 +1,17 @@
 <template>
     <div>
-        I'm the article page
+        <Row :gutter="16">
+            <Col span="24">
+                <ul class="bl-list">
+                    <li v-for="item in list" :key="item.id">
+                        <router-link :to="{name:item.pname,params: { plan: item.plan }}">{{ item.name }}</router-link>
+                        <span>
+                            {{ item.date }}
+                        </span>
+                    </li>
+                </ul>
+            </col>
+        </Row>
     </div>
 </template>
 
@@ -8,31 +19,22 @@
 export default {
     data() {
         return {
-            percent: 0
+            list: [
+                {
+                    id: 1,
+                    name: '生活随感【20170724】',
+                    pname:'Articles/Detail',
+                    plan: '20170724',
+                    date: '2017-07-24'
+                }
+            ]
         }
     },
     computed: {
-        color() {
-            let color = '#2db7f5';
-            if (this.percent == 100) {
-                color = '#5cb85c';
-            }
-            return color;
-        }
+        
     },
     methods: {
-        add() {
-            if (this.percent >= 100) {
-                return false;
-            }
-            this.percent += 10;
-        },
-        minus() {
-            if (this.percent <= 0) {
-                return false;
-            }
-            this.percent -= 10;
-        }
+       
     }
 }
 </script>

@@ -17,9 +17,6 @@ window.store = new Vuex.Store({
     }
 })
 Vue.config.productionTip = false;
-// router.beforeEach((to, from, next) => {
-//   // to 和 from 都是 路由信息对象
-// })
 router.beforeEach((to, from, next)=>{
     iView.LoadingBar.start();
     if(to.meta.breadcrumb){

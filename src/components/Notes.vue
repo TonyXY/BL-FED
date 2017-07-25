@@ -77,29 +77,6 @@
 export default {
     data() {
         return {
-            movieList: [
-                {
-                    id: 1,
-                    name: '常用地址',
-                    pname:'Notes/Detail',
-                    plan: 'commURL',
-                    date: '2017-07-11'
-                },
-                {
-                    id: 2,
-                    name: '常用Css',
-                    pname:'Notes/Detail',
-                    plan: 'commonUseCss',
-                    date: '2017-07-16'
-                },
-                {
-                    id: 3,
-                    name: '常用JavaScript',
-                    pname:'Notes/Detail',
-                    plan: 'commonUseJs',
-                    date: '2017-07-16'
-                }
-            ],
             cssList: [
                 {
                     id: 1,
