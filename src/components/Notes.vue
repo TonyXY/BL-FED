@@ -4,7 +4,7 @@
             <Col span="12">
             <Card>
                 <p slot="title">
-                    <Icon type="ios-film-outline"></Icon>
+                    <Icon type="social-buffer"></Icon>
                     Css
                 </p>
                 <ul class="bl-list">
@@ -20,7 +20,7 @@
             <Col span="12">
             <Card>
                 <p slot="title">
-                    <Icon type="ios-film-outline"></Icon>
+                    <Icon type="social-buffer"></Icon>
                     JavaScript
                 </p>
                 <ul class="bl-list">
@@ -39,7 +39,7 @@
             <Col span="12">
             <Card>
                 <p slot="title">
-                    <Icon type="ios-film-outline"></Icon>
+                    <Icon type="social-buffer"></Icon>
                     HTML
                 </p>
                 <ul class="bl-list">
@@ -55,7 +55,7 @@
             <Col span="12">
             <Card>
                 <p slot="title">
-                    <Icon type="ios-film-outline"></Icon>
+                    <Icon type="social-buffer"></Icon>
                     其他
                 </p>
                 <ul class="bl-list">
@@ -125,6 +125,13 @@ export default {
                     pname:'Notes/Detail',
                     plan: 'macUse',
                     date: '2017-07-19'
+                },
+                {
+                    id: 2,
+                    name: '一些常用的demo',
+                    pname:'Notes/Detail',
+                    plan: 'someDemo',
+                    date: '2017-07-26'
                 }
             ]
         }

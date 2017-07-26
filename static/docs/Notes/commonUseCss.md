@@ -51,7 +51,7 @@ input[type=text]:focus, input[type=password]:focus { border: 2px solid#f00;outli
     white-space: nowrap;text-overflow: ellipsis;
 }
 ```
-### 10.用CSS实现省略号文字截断: 
+### 10.处理移动端页面中iframe无法滚动的问题: 
 ``` css
 /*在iframe外加一层div，设置如下样式，让超出div的内容可以通过touch来滚动。*/
 {

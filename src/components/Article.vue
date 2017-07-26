@@ -20,13 +20,13 @@ export default {
     data() {
         return {
             list: [
-                {
+                /* {
                     id: 1,
                     name: '生活随感【20170724】',
                     pname:'Articles/Detail',
                     plan: '20170724',
                     date: '2017-07-24'
-                }
+                } */
             ]
         }
     },
