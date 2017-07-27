@@ -132,6 +132,13 @@ export default {
                     pname:'Notes/Detail',
                     plan: 'someDemo',
                     date: '2017-07-26'
+                },
+                {
+                    id: 3,
+                    name: 'vscode使用',
+                    pname:'Notes/Detail',
+                    plan: 'vscodeUse',
+                    date: '2017-07-27'
                 }
             ]
         }
