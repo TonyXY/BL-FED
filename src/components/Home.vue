@@ -8,6 +8,11 @@
             <Button icon="ios-plus-empty" @click="add"></Button>
             <Button icon="ios-minus-empty" @click="minus"></Button>
         </Button-group>
+        <Row>
+            <Col span="8">1</Col>
+            <Col span="8">2</Col>
+            <Col span="8">3</Col>
+        </Row>
     </div>
 </template>
 

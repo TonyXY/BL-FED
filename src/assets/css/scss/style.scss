@@ -13,6 +13,7 @@ html {
     height: 100%;
     width: 100%;
 }
+
 body {
     height: 100%;
 }
@@ -102,29 +103,30 @@ body {
 }
 
 .bl-about {
-    h3{
+    h3 {
         font-size: rem(14);
         line-height: 1.8;
     }
-    p{
+    p {
         font-size: rem(10);
         line-height: 1.6;
     }
 }
 
-.markdown-content{
+.markdown-content {
     font-size: rem(10);
     line-height: 1.4;
-    h2{
+    h2 {
         margin-bottom: rem(8);
     }
-    code{
-        padding:rem(8);
+    code {
+        padding: rem(8);
         margin: rem(4) 0 rem(8);
         display: block;
         background: rgb(247, 247, 247);
-        max-height: 4rem;
+        max-height: 6rem;
         overflow: auto;
+        font-size: rem(8);
     }
     a {
         color: #42b983;
@@ -134,17 +136,38 @@ body {
         margin: 8px 0 15px;
         padding-left: 10px;
         border-left: 4px solid #42b983;
-        p{
+        background: rgb(247, 247, 247);
+        p {
             font-weight: 600;
             margin-left: 0;
             margin-bottom: 0;
             padding-bottom: 0;
         }
     }
-    p{
-        margin-bottom:10px;
+    p {
+        margin-bottom: 10px;
     }
-    p>img{
+    p>img {
         max-width: 95%;
     }
-} 
+    table {
+        margin: rem(5) 0;
+        th,
+        td {
+            padding-left:rem(10);
+            padding-right: rem(10);
+            min-width: 0;
+            height: rem(30);
+            box-sizing: border-box;
+            text-align: left;
+            text-overflow: ellipsis;
+            vertical-align: middle;
+            border-bottom: 1px solid #e9eaec;
+        }
+        th {
+            white-space: nowrap;
+            overflow: hidden;
+            background-color: #f8f8f9;
+        }
+    }
+}

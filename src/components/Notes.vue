@@ -87,19 +87,33 @@ export default {
                 },
                 {
                     id: 2,
-                    name: '常用Css',
+                    name: '常用Css代码',
                     pname:'Notes/Detail',
                     plan: 'commonUseCss',
                     date: '2017-07-16'
-                }
+                },
+                {
+                    id: 3,
+                    name: '常用的CSS命名规则',
+                    pname:'Notes/Detail',
+                    plan: 'commonCssName',
+                    date: '2017-07-28'
+                },
             ],
             jsList: [
                 {
                     id: 1,
-                    name: '常用JavaScript',
+                    name: '常用JavaScript代码',
                     pname:'Notes/Detail',
                     plan: 'commonUseJs',
                     date: '2017-07-16'
+                },
+                {
+                    id: 2,
+                    name: '常用正则表达式',
+                    pname:'Notes/Detail',
+                    plan: 'regUse',
+                    date: '2017-07-28'
                 }
             ],
             htmlList: [
@@ -128,7 +142,7 @@ export default {
                 },
                 {
                     id: 2,
-                    name: '一些常用的demo',
+                    name: '一些常用功能的demo',
                     pname:'Notes/Detail',
                     plan: 'someDemo',
                     date: '2017-07-26'

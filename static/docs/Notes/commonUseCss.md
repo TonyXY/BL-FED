@@ -1,5 +1,5 @@
 [//]: # (2017-07-16 css)
-## 常用css
+## 常用css代码
 
 ### 1.硬件加速:
 ``` css
@@ -47,9 +47,10 @@ input[type=text]:focus, input[type=password]:focus { border: 2px solid#f00;outli
 ```
 ### 9.用CSS实现省略号文字截断:
 ``` css
-{
-    white-space: nowrap;text-overflow: ellipsis;
-}
+/*单行*/
+{white-space: nowrap;text-overflow: ellipsis;}
+/*多行*/
+{white-space: nowrap;text-overflow: ellipsis;overflow:hidden;}
 ```
 ### 10.处理移动端页面中iframe无法滚动的问题: 
 ``` css
@@ -59,128 +60,45 @@ input[type=text]:focus, input[type=password]:focus { border: 2px solid#f00;outli
 	overflow-y: scroll !important;
 }
 ```
-### 11.常用的CSS命名规则:
-``` js
-//    头：header
-//    内容：content/container
-// 　　尾：footer
-// 　　导航：nav
-// 　　侧栏：sidebar
-// 　　栏目：column
-// 　　页面外围控制整体佈局宽度：wrapper
-// 　　左右中：left right center
-// 　　登录条：loginbar
-// 　　标志：logo
-// 　　广告：banner
-// 　　页面主体：main
-// 　　热点：hot
-// 　　新闻：news
-// 　　下载：download
-// 　　子导航：subnav
-// 　　菜单：menu
-// 　　子菜单：submenu
-// 　　搜索：search
-// 　　友情链接：friendlink
-// 　　页脚：footer
-// 　　版权：copyright
-// 　　滚动：scroll
-// 　　内容：content
-// 　　标签：tags
-// 　　文章列表：list
-// 　　提示信息：msg
-// 　　小技巧：tips
-// 　　栏目标题：title
-// 　　加入：joinus
-// 　　指南：guide
-// 　　服务：service
-// 　　注册：regsiter
-// 　　状态：status
-// 　　投票：vote
-// 　　合作伙伴：partner
 
-// 　　注释的写法:
+### 11.判断横屏竖屏
+``` css
+@media screen and (orientation: portrait) {
+  /*竖屏 css*/
+} 
+@media screen and (orientation: landscape) {
+  /*横屏 css*/
+}
+```
+``` javascript
+//判断手机横竖屏状态(javascript)：
+window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function({
+	if (window.orientation === 180 || window.orientation === 0) { 
+		alert('竖屏状态！');
+	} 
+	if (window.orientation === 90 || window.orientation === -90 ){ 
+		alert('横屏状态！');
+	}  
+}, false); 
+```
 
-// 　　/* Header */
-// 　　内容区
-// 　　/* End Header */
+### 12.placeholder占位符颜色自定义
+``` css
+input:-moz-placeholder {color: #369;}
+::-webkit-input-placeholder {color:#369;}
+```
 
-// 　　id的命名:
+### 13.取消chrome搜索x提示
+``` css
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+    display: none;
+}
+```
 
-// 　　1)页面结构
-
-// 　　容器: container
-// 　　页头：header
-// 　　内容：content/container
-// 　　页面主体：main
-// 　　页尾：footer
-// 　　导航：nav
-// 　　侧栏：sidebar
-// 　　栏目：column
-// 　　页面外围控制整体佈局宽度：wrapper
-// 　　左右中：left right center
-
-// 　　(2)导航
-
-// 　　导航：nav
-// 　　主导航：mainnav
-// 　　子导航：subnav
-// 　　顶导航：topnav
-// 　　边导航：sidebar
-// 　　左导航：leftsidebar
-// 　　右导航：rightsidebar
-// 　　菜单：menu
-// 　　子菜单：submenu
-// 　　标题: title
-// 　　摘要: summary
-
-// 　　(3)功能
-
-// 　　标志：logo
-// 　　广告：banner
-// 　　登陆：login
-// 　　登录条：loginbar
-// 　　注册：register
-// 　　搜索：search
-// 　　功能区：shop
-// 　　标题：title
-// 　　加入：joinus
-// 　　状态：status
-// 　　按钮：btn
-// 　　滚动：scroll
-// 　　标籤页：tab
-// 　　文章列表：list
-// 　　提示信息：msg
-// 　　当前的: current
-// 　　小技巧：tips
-// 　　图标: icon
-// 　　注释：note
-// 　　指南：guild
-// 　　服务：service
-// 　　热点：hot
-// 　　新闻：news
-// 　　下载：download
-// 　　投票：vote
-// 　　合作伙伴：partner
-// 　　友情链接：link
-// 　　版权：copyright
-
-// 　　注意事项::
-
-// 　　1.一律小写;
-// 　　2.尽量用英文;
-// 　　3.不加中槓和下划线;
-// 　　4.尽量不缩写，除非一看就明白的单词。
-
-// 　　CSS样式表文件命名
-
-// 　　主要的 master.css
-// 　　模块 module.css
-// 　　基本共用 base.css
-// 　　布局、版面 layout.css
-// 　　主题 themes.css
-// 　　专栏 columns.css
-// 　　文字 font.css
-// 　　表单 forms.css
-// 　　补丁 mend.css
-// 　　打印 print.css
+### 14.取消textarea右下角可拖动手柄
+``` css
+resize:none;
 ```
