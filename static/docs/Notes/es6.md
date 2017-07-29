@@ -1,4 +1,5 @@
 [//]: # (2017-07-29 js)
+
 ## es6知识
 
 ### 1.let命令
@@ -123,7 +124,7 @@ b.sayName();//XIAO
 b.sayGrade();//1
 ```
 
-### 4.数组”Array“
+### 4.数组"Array"
 >* ES6 提供了更接近传统语言的写法，引入了 Class（类）这个概念，作为对象的模板。
 >* Array.from方法用于将两类对象转为真正的数组，类似数组的对象（array-like object）和可遍历（iterable）的对象。
 >* Array.of方法用于将一组值，转换为数组。
