@@ -114,6 +114,20 @@ export default {
                     pname:'Notes/Detail',
                     plan: 'regUse',
                     date: '2017-07-28'
+                },
+                {
+                    id: 3,
+                    name: '排序相关',
+                    pname: 'Notes/Detail',
+                    plan: 'sort',
+                    date: '2017-07-29'
+                },
+                {
+                    id: 4,
+                    name: 'es6学习',
+                    pname: 'Notes/Detail',
+                    plan: 'es6',
+                    date: '2017-07-29'
                 }
             ],
             htmlList: [
@@ -130,6 +144,13 @@ export default {
                     pname:'Notes/Detail',
                     plan: 'tabHtml',
                     date: '2017-07-19'
+                },
+                {
+                    id: 3,
+                    name: '前端优化相关',
+                    pname: 'Notes/Detail',
+                    plan: 'fed',
+                    date: '2017-07-29'
                 }
             ],
             otherList: [

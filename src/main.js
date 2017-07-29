@@ -6,37 +6,37 @@ import iView from 'iview';
 import App from './App';
 import router from './router';
 import config from './config/api';
-console.log(config);
 Vue.use(Vuex);
 Vue.use(iView);
 window.store = new Vuex.Store({
-    state: {
-        breadcrumb: []
-    },
-    mutations: {
-        // increment: state => state.count++,
-        // decrement: state => state.count--
-    }
+	state: {
+		breadcrumb: []
+	},
+	mutations: {
+		// increment: state => state.count++,
+		// decrement: state => state.count--
+	}
 })
 Vue.config.productionTip = false;
-router.beforeEach((to, from, next)=>{
-    iView.LoadingBar.start();
-    if(to.meta.breadcrumb){
-        store.state.breadcrumb = to.meta.breadcrumb;
-    }else{
-        store.state.breadcrumb = [];
-    }
-    next();
+router.beforeEach((to, from, next) => {
+	iView.LoadingBar.start();
+	if (to.meta.breadcrumb) {
+		store.state.breadcrumb = to.meta.breadcrumb;
+	} else {
+		store.state.breadcrumb = [];
+	}
+	next();
 });
 router.afterEach(() => {
-    iView.LoadingBar.finish();
-    window.scrollTo(0, 0);
+	iView.LoadingBar.finish();
+	window.scrollTo(0, 0);
 });
 const myApp = new Vue({
-    el: '#app',
-    store,
-    router,
-    template: '<App/>',
-    components: { App }
+	el: '#app',
+	store,
+	router,
+	template: '<App/>',
+	components: {
+		App
+	}
 });
-
