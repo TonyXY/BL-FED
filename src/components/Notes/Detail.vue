@@ -30,9 +30,9 @@ export default {
         return {
             rawHtml: '',
             toc: [],
-            tocshow:true,
-            tocspan:6,
-            conspan:18
+            tocshow:false,
+            tocspan:0,
+            conspan:24
         }
     },
     beforeRouteEnter(to, from, next) {
@@ -43,6 +43,12 @@ export default {
                     var idx = 1;
                     renderer.heading = function (text, level) {
                         // var slug = text.toLowerCase().replace(/[^\w]+/g, '-');
+                        if(level == 1 && text == "TOC"){
+                            vm.tocshow = true;
+                            vm.tocspan = 6;
+                            vm.conspan = 18;
+                            return '';
+                        }
                         var slug = 'slug_' + idx;
                         vm.toc.push({
                             level: level,
