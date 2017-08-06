@@ -174,6 +174,20 @@ export default {
                     pname:'Notes/Detail',
                     plan: 'vscodeUse',
                     date: '2017-07-27'
+                },
+                {
+                    id: 4,
+                    name: 'gulp配置',
+                    pname: 'Notes/Detail',
+                    plan: 'gulp',
+                    date: '2017-08-06'
+                },
+                {
+                    id: 5,
+                    name: 'Git常用命令',
+                    pname: 'Notes/Detail',
+                    plan: 'git',
+                    date: '2017-08-06'
                 }
             ]
         }
