@@ -99,6 +99,13 @@ export default {
                     plan: 'commonCssName',
                     date: '2017-07-28'
                 },
+                {
+                    id: 4,
+                    name: 'Sass 学习',
+                    pname: 'Notes/Detail',
+                    plan: 'sass',
+                    date: '2017-07-28'
+                }
             ],
             jsList: [
                 {
