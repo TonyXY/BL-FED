@@ -19,6 +19,8 @@ $highlight-border: 1px solid $highlight-color;
 ### 2.嵌套css规则
 >* "&" 父选择器
 >* "," 群组选择器
+>* ">、+、~" 子组合选择器和同层组合选择器
+>* 除了CSS选择器，属性也可以进行嵌套
 
 ``` scss
 //"&" 父选择器
@@ -44,6 +46,50 @@ nav, aside {
 }
 /*编译后*/
 nav a, aside a {color: blue}
+
+//">、+、~" 子组合选择器和同层组合选择器
+article {
+    ~ article { border-top: 1px dashed #ccc }
+    > section { background: #eee }
+    dl > {
+        dt { color: #333 }
+        dd { color: #555 }
+    }
+    nav + & { margin-top: 0 }
+}
+/*编译后*/
+article ~ article { border-top: 1px dashed #ccc }
+article > footer { background: #eee }
+article dl > dt { color: #333 }
+article dl > dd { color: #555 }
+nav + article { margin-top: 0 }
+
+//属性也可以进行嵌套
+nav {
+    border: {
+        style: solid;
+        width: 1px;
+        color: #ccc;
+    }
+}
+/*编译后*/
+nav {
+    border: 1px solid #ccc;
+    border-left: 0px;
+    border-right: 0px;
+}
+//对于属性的缩写形式，你甚至可以像下边这样来嵌套，指明例外规则
+nav {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ccc;
+}
+/*编译后*/
+nav {
+    border: 1px solid #ccc;
+    border-left: 0px;
+    border-right: 0px;
+}
 ```
 
 
