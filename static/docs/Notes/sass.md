@@ -92,5 +92,44 @@ nav {
 }
 ```
 
+ ### 3.导入sass文件“@import”
+>* @import可以省略.sass或.scss文件后缀，在SASS中允许@import命令写在css规则内
+>* 局部文件，文件名以下划线开头；sass不会在编译时单独编译这个文件输出css。
+>* @import局部文件时，可以不写文件的全名，即省略文件名开头的下划线。
+>* !default 设置默认变量值，含义是：如果这个变量被声明赋值了，那就用它声明的值，否则就用这个默认值。
+>* 在sass文件中导入css文件如@import 'reset.css'，那效果跟普通CSS导入样式文件一样，导入的css文件不会合并到编译后的文件中，而是以@import方式存在。另外sass的语法完全兼容css，可以把原始的css文件改名为.scss后缀，即可直接导入了
 
+``` scss
+//导入文件colors.scss
+@import "colors";
+//@import命令写在css规则内 _blue-theme.scss
+.blue-theme{
+    @import "blue-theme"
+}
+//导入局部文件themes/_night-sky.scss
+@import "themes/night-sky";
+//!default 设置默认变量值
+$fancybox-width: 400px !default;
+```
 
+### 4.注释
+>* /* ... */静默注释，其内容不会出现在生成的css文件中
+>* //开头，注释内容直到行末。
+
+``` scss
+body {
+  color: #333; // 这种注释内容不会出现在生成的css文件中
+  padding: 0; /* 这种注释内容会出现在生成的css文件中 */
+}
+```
+
+### 5.注释
+>* /* ... */静默注释，其内容不会出现在生成的css文件中
+>* //开头，注释内容直到行末。
+
+``` scss
+body {
+  color: #333; // 这种注释内容不会出现在生成的css文件中
+  padding: 0; /* 这种注释内容会出现在生成的css文件中 */
+}
+```
