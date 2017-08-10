@@ -2,9 +2,11 @@
 # TOC
 ## Sass 学习
 
-### 1.变量
+### 1.变量及注释
 >* 使用$符号来标识变量，在声明变量时，变量值也可以引用其他变量。
 >* 变量名多个词之间可以使用中划线或下划线分隔，用中划线声明的变量可以使用下划线的方式引用，反之亦然。
+>* /* ... */标准注释格式，内容会出现在生成的css文件中 
+>* //静默注释，注释内容直到行末，其内容不会出现在生成的css文件中。
 
 ``` scss
 //在声明变量时，变量值也可以引用其他变量
@@ -13,6 +15,12 @@ $highlight-border: 1px solid $highlight-color;
 .selected {
     //用中划线声明的变量可以使用下划线的方式引用，反之亦然
     border: $highlight_border;
+}
+
+//注释 示例
+body {
+  color: #333; // 这种注释内容不会出现在生成的css文件中
+  padding: 0; /* 这种注释内容会出现在生成的css文件中 */
 }
 ```
 
@@ -112,24 +120,102 @@ nav {
 $fancybox-width: 400px !default;
 ```
 
-### 4.注释
->* /* ... */静默注释，其内容不会出现在生成的css文件中
->* //开头，注释内容直到行末。
+### 4.颜色函数及高级用法
+>* 条件判断：@if、@else。
+>* 循环：@for、@while、@each。
+>* 自定义函数：@function。
 
 ``` scss
-body {
-  color: #333; // 这种注释内容不会出现在生成的css文件中
-  padding: 0; /* 这种注释内容会出现在生成的css文件中 */
+//@if
+p {
+    @if 1 + 1 == 2 { border: 1px solid; }
+    @if 5 < 3 { border: 2px dotted; }
 }
+//@if-@else
+@if lightness($color) > 30% {
+    background-color: #000;
+} @else {
+    background-color: #fff;
+}
+
+//@for
+@for $i from 1 to 10 {
+    .border-#{$i} {
+        border: #{$i}px solid blue;
+    }
+}
+//@while
+$i: 6;
+@while $i > 0 {
+    .item-#{$i} { width: 2em * $i; }
+    $i: $i - 2;
+}
+//@each
+@each $member in a, b, c, d {
+    .#{$member} {
+        background-image: url("/image/#{$member}.jpg");
+    }
+}　
+　
+//自定义函数
+@function double($n) {
+    @return $n * 2;
+}　　
+``` 
+
+### 5.颜色函数
+>* SASS提供了一些内置的颜色函数，以便生成系列颜色。
+
+``` scss
+//颜色函数
+$color1:lighten(#cc3, 10%) // #d6d65c
+$color2:darken(#cc3, 10%) // #a3a329
+$color3:grayscale(#cc3) // #808080
+$color4:complement(#cc3) // #33c
 ```
 
-### 5.注释
->* /* ... */静默注释，其内容不会出现在生成的css文件中
->* //开头，注释内容直到行末。
+### 6.混合器及继承
+>* 使用@mixin命令，定义一个代码块，混合器中不仅可以包含属性，也可以包含css规则，包含选择器和选择器中的属性。
+>* 使用@include命令，调用这个mixin，在混合器中的规则最终会生成父规则中的嵌套规则。
+>* mixin的强大之处，在于可以指定参数和缺省值。
+>* 使用@extend使一个选择器，继承另一个选择器。
 
 ``` scss
-body {
-  color: #333; // 这种注释内容不会出现在生成的css文件中
-  padding: 0; /* 这种注释内容会出现在生成的css文件中 */
+//混合器@mixin
+@mixin no-bullets {
+    list-style: none;
+    li {
+        margin-left: 0px;
+    }
+}
+ul.plain {
+    color: #444;
+    @include no-bullets;
+}
+/*编译后*/
+ul.plain {
+    color: #444;
+    list-style: none;
+}
+ul.plain li {
+    list-style: none;
+    margin-left: 0px;
+}
+//指定参数和缺省值
+@mixin left($value: 10px) {
+    float: left;
+    margin-right: $value;
+}
+div {
+    @include left(20px);
+}
+//继承@extend
+.class1 {
+    border: 1px solid #ddd;
+}
+//class2继承class1
+.class2 {
+    @extend .class1;
+    font-size:120%;
 }
 ```
