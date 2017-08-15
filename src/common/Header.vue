@@ -3,7 +3,7 @@
 		<div class="main-width layout-top">
 			<div class="layout-logo">
 				<router-link to="/">
-					<img src="images/logo.png" alt="">
+					<img src="./../assets/images/logo.png" alt="">
 				</router-link>
 			</div>
 			<div class="layout-nav">

@@ -39,14 +39,14 @@ module.exports = function() {
                     loader: 'url-loader',
                     query: {
                         limit: 10000,
-                        name: utils.assetsPath('img/[name].[hash:7].[ext]')
+                        name: utils.assetsPath('images/[name].[ext]?v=[hash:7]')
                     }
                 },{
                     test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
                     loader: 'url-loader',
                     query: {
                         limit: 10000,
-                        name: utils.assetsPath('css/fonts/[name].[hash:7].[ext]')
+                        name: utils.assetsPath('css/fonts/[name].[ext]?v=[hash:7]')
                     }
                 },{
                     test: /\.css$/,
