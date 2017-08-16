@@ -10,8 +10,10 @@ const WebpackChunkHash = require("webpack-chunk-hash");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 const commonConfig = require('./webpack.base.conf.js');
-let env = config.build.env;
-let webpackConfig = webpackMerge(commonConfig(), {
+let env = process.env.NODE_ENV === 'testing' ?
+    require('../config/test.env') :
+    config.build.env;
+let webpackConfig = webpackMerge(commonConfig, {
     module: {
         rules: utils.styleLoaders({
             sourceMap: config.build.productionSourceMap,
@@ -53,17 +55,22 @@ let webpackConfig = webpackMerge(commonConfig(), {
         }),
         // Compress extracted CSS. We are using this plugin so that possible
         // duplicated CSS from different components can be deduped.
-        new OptimizeCSSPlugin(),
+        new OptimizeCSSPlugin({
+            cssProcessorOptions: {
+                safe: true
+            }
+        }),
         // generate dist index.html with correct asset hash for caching.
         // you can customize output by editing /index.html
         // see https://github.com/ampedandwired/html-webpack-plugin
         new HtmlWebpackPlugin({
-            filename: config.build.index,
+            filename: process.env.NODE_ENV === 'testing' ?
+                'index.html' : config.build.index,
             template: 'index.html',
             inject: true,
             minify: {
-                removeComments: true,//移除HTML中的注释
-                collapseWhitespace: true,//删除空白符与换行符
+                removeComments: true, //移除HTML中的注释
+                collapseWhitespace: true, //删除空白符与换行符
                 removeAttributeQuotes: true
                 // more options:
                 // https://github.com/kangax/html-minifier#options-quick-reference

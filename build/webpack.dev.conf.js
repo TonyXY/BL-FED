@@ -8,9 +8,8 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const ChunkManifestPlugin = require("chunk-manifest-webpack-plugin");
 const WebpackChunkHash = require("webpack-chunk-hash");
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
-const commonConfig = require('./webpack.base.conf.js');
-// add hot-reload related code to entry chunks
-let baseWebpackConfig = commonConfig();
+const baseWebpackConfig = require('./webpack.base.conf.js');
+// add hot-reload related code to entry chunk
 Object.keys(baseWebpackConfig.entry).forEach(function (name) {
     baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
 })

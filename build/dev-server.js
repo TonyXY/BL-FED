@@ -1,16 +1,20 @@
+require('./check-versions')()
 const path = require('path');
 const webpack = require('webpack');
 const express = require('express');
 const opn = require('opn');
 const child_process = require("child_process");
-const webpackConfig = require('./webpack.dev.conf.js');
+const webpackConfig = process.env.NODE_ENV === 'testing'
+  ? require('./webpack.prod.conf')
+  : require('./webpack.dev.conf');
 const proxyMiddleware = require('http-proxy-middleware');
 const config = require('../config');
+
+let app = express();
+let compiler = webpack(webpackConfig);
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 }
-let app = express();
-let compiler = webpack(webpackConfig);
 // default port where dev server listens for incoming traffic
 let port = process.env.PORT || config.dev.port;
 // automatically open browser, if not set will be false
@@ -23,8 +27,10 @@ let devMiddleware = require('webpack-dev-middleware')(compiler, {
     quiet: true
 })
 
+
 let hotMiddleware = require('webpack-hot-middleware')(compiler, {
-    log: () => {}
+  log: false,
+  heartbeat: 2000
 })
 // force page reload when html-webpack-plugin template changes
 compiler.plugin('compilation', function(compilation) {

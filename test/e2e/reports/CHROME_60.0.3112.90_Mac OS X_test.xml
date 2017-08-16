@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
-            failures="1"
+            failures="0"
             tests="1">
 
   <testsuite name="test"
-    errors="0" failures="1" hostname="" id="" package="test" skipped="0"
-    tests="1" time="4.428" timestamp="Wed, 16 Aug 2017 09:26:20 GMT">
+    errors="0" failures="0" hostname="" id="" package="test" skipped="0"
+    tests="1" time="2.722" timestamp="Wed, 16 Aug 2017 16:10:42 GMT">
   
-    <testcase name="default e2e tests" classname="test" time="4.428" assertions="2">
+    <testcase name="default e2e tests" classname="test" time="2.722" assertions="4">
 
-      <failure message="Testing if element &lt;.hello&gt; is present.">    at Object.defaultE2eTests [as default e2e tests] (/Users/xiaoyang600/我的文件/git_workspace/BL-FED/test/e2e/specs/test.js:14:15)
-    at _combinedTickCallback (internal/process/next_tick.js:73:7)</failure>
+    
+
+    
+
+    
 
     
     </testcase>
