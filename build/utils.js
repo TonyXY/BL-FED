@@ -2,14 +2,14 @@ const path = require('path');
 const config = require('../config');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-exports.assetsPath = function(_path) {
+exports.assetsPath = function (_path) {
     let assetsSubDirectory = process.env.NODE_ENV === 'production' ?
         config.build.assetsSubDirectory :
         config.dev.assetsSubDirectory
     return path.posix.join(assetsSubDirectory, _path)
 }
 
-exports.cssLoaders = function(options) {
+exports.cssLoaders = function (options) {
     options = options || {}
 
     let cssLoader = {
@@ -18,7 +18,7 @@ exports.cssLoaders = function(options) {
             minimize: process.env.NODE_ENV === 'production',
             sourceMap: options.sourceMap
         }
-    }
+    };
 
     // generate loader string to be used with extract text plugin
     function generateLoaders(loader, loaderOptions) {
@@ -59,7 +59,7 @@ exports.cssLoaders = function(options) {
 }
 
 // Generate loaders for standalone style files (outside of .vue)
-exports.styleLoaders = function(options) {
+exports.styleLoaders = function (options) {
     let output = []
     let loaders = exports.cssLoaders(options)
     for (var extension in loaders) {

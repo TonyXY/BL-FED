@@ -12,12 +12,12 @@ const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 const commonConfig = require('./webpack.base.conf.js');
 let env = config.build.env;
 let webpackConfig = webpackMerge(commonConfig(), {
-    // module: {
-    //   rules: utils.styleLoaders({
-    //     sourceMap: config.build.productionSourceMap,
-    //     extract: true
-    //   })
-    // },
+    module: {
+        rules: utils.styleLoaders({
+            sourceMap: config.build.productionSourceMap,
+            extract: true
+        })
+    },
     devtool: config.build.productionSourceMap ? '#source-map' : false,
     output: {
         path: config.build.assetsRoot,
@@ -30,8 +30,20 @@ let webpackConfig = webpackMerge(commonConfig(), {
             'process.env': env
         }),
         new webpack.optimize.UglifyJsPlugin({
+            // 最紧凑的输出
+            beautify: false,
+            // 删除所有的注释
+            comments: false,
             compress: {
-                warnings: false
+                // 在UglifyJs删除没有用到的代码时不输出警告  
+                warnings: false,
+                // 删除所有的 `console` 语句
+                // 还可以兼容ie浏览器
+                drop_console: true,
+                // 内嵌定义了但是只用到一次的变量
+                collapse_vars: true,
+                // 提取出出现多次但是没有定义成变量去引用的静态值
+                reduce_vars: true
             },
             sourceMap: true
         }),
@@ -50,8 +62,8 @@ let webpackConfig = webpackMerge(commonConfig(), {
             template: 'index.html',
             inject: true,
             minify: {
-                removeComments: true,
-                collapseWhitespace: true,
+                removeComments: true,//移除HTML中的注释
+                collapseWhitespace: true,//删除空白符与换行符
                 removeAttributeQuotes: true
                 // more options:
                 // https://github.com/kangax/html-minifier#options-quick-reference
@@ -62,7 +74,7 @@ let webpackConfig = webpackMerge(commonConfig(), {
         // split vendor js into its own file
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
-            minChunks: function(module, count) {
+            minChunks: function (module, count) {
                 // any required modules inside node_modules are extracted to vendor
                 return (
                     module.resource &&
