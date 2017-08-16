@@ -62,11 +62,23 @@ app.use(staticPath, express.static('./static'));
 
 let uri = 'http://localhost:' + port;
 
-devMiddleware.waitUntilValid(function() {
-    console.log('> Listening at ' + uri + '\n');
+var _resolve
+var readyPromise = new Promise(resolve => {
+    _resolve = resolve
 })
 
-module.exports = app.listen(port, function(err) {
+console.log('> Starting dev server...')
+devMiddleware.waitUntilValid(() => {
+    console.log('> Listening at ' + uri + '\n')
+    // when env is testing, don't need open it
+    if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
+        opn(uri)
+    }
+    _resolve()
+})
+
+
+let server = app.listen(port, function (err) {
     if (err) {
         console.log(err);
         return;
@@ -91,3 +103,36 @@ module.exports = app.listen(port, function(err) {
     //     opn(uri);
     // }
 })
+
+module.exports = {
+    ready: readyPromise,
+    close: () => {
+        server.close()
+    }
+}
+
+// module.exports = app.listen(port, function(err) {
+//     if (err) {
+//         console.log(err);
+//         return;
+//     }
+//     if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
+//         let spawn = child_process.spawn,
+//             openArgs = ['-a', 'Google\ Chrome'];
+
+//         if(config.dev.closeWebSecurity) {
+//             openArgs.push('--args', '--disable-web-security', '--user-data-dir', '--user-dir');
+//             //杀掉原chrome程序
+//             spawn('pkill', ['-9', 'Google\ Chrome']);
+//         }
+
+//         openArgs.push(uri);
+
+//         //打开指定页面
+//         spawn('open', openArgs);
+//     }
+//     // when env is testing, don't need open it
+//     // if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
+//     //     opn(uri);
+//     // }
+// })
