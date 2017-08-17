@@ -43,13 +43,14 @@ export default {
                     var idx = 1;
                     renderer.heading = function (text, level) {
                         // var slug = text.toLowerCase().replace(/[^\w]+/g, '-');
+                        var slug = 'slug_' + idx;
                         if(level == 1 && text == "TOC"){
                             vm.tocshow = true;
                             vm.tocspan = 6;
                             vm.conspan = 18;
                             return '';
                         }
-                        var slug = 'slug_' + idx;
+                        
                         vm.toc.push({
                             level: level,
                             slug: slug,
