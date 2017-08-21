@@ -135,6 +135,13 @@ export default {
                     pname: 'Notes/Detail',
                     plan: 'es6',
                     date: '2017-07-29'
+                },
+                {
+                    id: 5,
+                    name: 'js异常错误整理',
+                    pname: 'Notes/Detail',
+                    plan: 'jsError',
+                    date: '2017-08-21'
                 }
             ],
             htmlList: [
