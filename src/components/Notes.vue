@@ -165,6 +165,13 @@ export default {
                     pname: 'Notes/Detail',
                     plan: 'fed',
                     date: '2017-07-29'
+                },
+                {
+                    id: 4,
+                    name: 'meta相关',
+                    pname: 'Notes/Detail',
+                    plan: 'metaHtml',
+                    date: '2017-08-24'
                 }
             ],
             otherList: [
