@@ -16,7 +16,7 @@
 | ⌃⇧` | 创建新终端 |
 | ⌘W | 关闭 |
 | ⇧⌘P | 命令面板 |
-| ⌃⇧F | 转换成大写 |
+| ⌃⇧U | 转换成大写 |
 | ⌃⇧L | 转换成小写 |
 | ⌥B | 在默认浏览器中打开<small>[需安装open-in-browser插件]</small>|
 | ⌃⌥I | 文件添加注释<small>[需安装vscode-fileheader插件]</small>|
