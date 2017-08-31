@@ -6,6 +6,9 @@ import iView from 'iview';
 import App from './App';
 import router from './router';
 import config from './config/api';
+import webComm from './common';
+console.log(webComm);
+window.webComm = webComm;
 Vue.use(Vuex);
 Vue.use(iView);
 window.store = new Vuex.Store({

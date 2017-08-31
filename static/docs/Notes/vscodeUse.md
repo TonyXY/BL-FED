@@ -16,6 +16,8 @@
 | ⌃⇧` | 创建新终端 |
 | ⌘W | 关闭 |
 | ⇧⌘P | 命令面板 |
+| ⌃⇧F | 转换成大写 |
+| ⌃⇧L | 转换成小写 |
 | ⌥B | 在默认浏览器中打开<small>[需安装open-in-browser插件]</small>|
 | ⌃⌥I | 文件添加注释<small>[需安装vscode-fileheader插件]</small>|
 | ⌃C | Can I Use<small>[需安装Can I Use插件]</small>|
@@ -30,3 +32,18 @@
 | Vetur | 支持vue语法 |
 | vscode-fileheader | 文件添加注释 |
 | vscode-icons | 文件图标插件 |
+
+### 3.添加切换大小写功能快捷键
+``` json
+//自定义快捷键配置中 keybindings.json 增加如下代码即可
+{
+    "key": "ctrl+shift+u",
+    "command": "editor.action.transformToUppercase",
+    "when": "editorTextFocus"
+},
+{
+    "key": "ctrl+shift+l",
+    "command": "editor.action.transformToLowercase",
+    "when": "editorTextFocus"
+}
+```

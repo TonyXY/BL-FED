@@ -26,7 +26,7 @@ export default {
                     pname:'Articles/Detail',
                     plan: '20170724',
                     date: '2017-07-24'
-                } */
+                } */  
             ]
         }
     },

@@ -10,7 +10,7 @@
                 <ul class="bl-list">
                     <li v-for="item in toc" :key="item.id">
                         <a href="javascript:void(0)" @click="goAnchor('#'+item.slug)" v-html="
-                item.title"></a>
+                    item.title"></a>
                     </li>
                 </ul>
             </Card>
@@ -30,27 +30,27 @@ export default {
         return {
             rawHtml: '',
             toc: [],
-            tocshow:false,
-            tocspan:0,
-            conspan:24
+            tocshow: false,
+            tocspan: 0,
+            conspan: 24
         }
     },
     beforeRouteEnter(to, from, next) {
-        axios.get('docs/Notes/' + to.params.plan + '.md')
-            .then(function (response) {
+        webComm.baseRequestFile('docs/Notes/' + to.params.plan + '.md', {
+            callback: function(response) {
                 next(vm => {
                     var renderer = new marked.Renderer();
                     var idx = 1;
-                    renderer.heading = function (text, level) {
+                    renderer.heading = function(text, level) {
                         // var slug = text.toLowerCase().replace(/[^\w]+/g, '-');
                         var slug = 'slug_' + idx;
-                        if(level == 1 && text == "TOC"){
+                        if (level == 1 && text == "TOC") {
                             vm.tocshow = true;
                             vm.tocspan = 6;
                             vm.conspan = 18;
                             return '';
                         }
-                        
+
                         vm.toc.push({
                             level: level,
                             slug: slug,
@@ -61,10 +61,11 @@ export default {
                     };
                     vm.rawHtml = marked(response.data, { renderer: renderer });
                 })
-            })
-            .catch(function (error) {
+            }, 
+            errorback: function(error) {
                 next(false)
-            });
+            }
+        });
     },
     computed: {
 
@@ -75,7 +76,7 @@ export default {
             document.body.scrollTop = anchor.offsetTop;
         }
     },
-    created: function () {
+    created: function() {
 
     }
 }

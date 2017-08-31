@@ -12,14 +12,15 @@ export default {
         }
     },
     beforeRouteEnter (to, from, next) {
-        axios.get('docs/Articles/'+to.params.plan+'.md')
-        .then(function (response) {
-            next(vm => {
-                vm.rawHtml = marked(response.data);
-            })
-        })
-        .catch(function (error) {
-            next(false)
+        webComm.baseRequestFile('docs/Articles/' + to.params.plan + '.md', {
+            callback: function(response) {
+                next(vm => {
+                    vm.rawHtml = marked(response.data);
+                })
+            },
+            errorback: function(error) {
+                next(false)
+            }
         });
     },
     computed: {
