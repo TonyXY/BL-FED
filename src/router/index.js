@@ -1,17 +1,15 @@
 /**
  * 路由配置
  */
-import Vue from 'vue'
-import Router from 'vue-router'
-import axios from 'axios'
-import marked from 'marked'
-import Header from '@/common/Header'
-import Main from '@/common/Main'
-import MainH from '@/common/MainH'
-import Footer from '@/common/Footer'
-import pages from "@/menu"
+import Vue from 'vue';
+import Router from 'vue-router';//https://router.vuejs.org/zh-cn/
+import marked from 'marked';
+import Header from '@/common/Header';
+import Main from '@/common/Main';
+import MainH from '@/common/MainH';
+import Footer from '@/common/Footer';
+import pages from "@/router/menu";
 
-window.axios = axios;
 window.marked = marked;
 marked.setOptions({
     renderer: new marked.Renderer(),

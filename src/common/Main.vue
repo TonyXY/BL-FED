@@ -29,7 +29,7 @@ export default {
 	},
 	computed: {
 		breadcrumb () {
-			return store.state.breadcrumb;
+			return this.$store.state.breadcrumb;
 		}
 	},
 	created(){

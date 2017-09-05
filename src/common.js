@@ -1,9 +1,12 @@
 /**
  * common
- * 全局变量/方法定义
+ * 全局方法定义
  **/
 /* eslint-disable */
-import axios from 'axios'
+import Vue from 'vue';
+import config from './config/api';
+import axios from 'axios'; //https://github.com/mzabriskie/axios
+// console.log(config.api_root);
 export default {
 	/**
 	 * @function isUndefinedOrNull
@@ -62,9 +65,20 @@ export default {
 	baseRequest: function (interfaceName, options) { //请求基础方法(接口名称，请求参数)
 		var baseParams = {}; //定义基础参数
 		var opt = Vue.util.extend(baseParams, options.data);
-		axios.get(interfaceName)
+		axios({
+			method: options.method ? options.method : 'post',
+			baseURL: config.api_root,
+			url: interfaceName,
+			data: opt,
+			// headers: {
+			// 	'Content-Type': "application/json;charset=UTF-8",
+			// 	'PACES-APPLY-SESSION':""
+			// },
+			timeout: 60000,
+			withCredentials: true
+		})
 			.then(function (response) {
-				options.callback && options.callback(response);
+				options.callback && options.callback(response.data);
 			})
 			.catch(function (error) {
 				options.errorback && options.errorback(false);
@@ -73,7 +87,7 @@ export default {
 	baseRequestFile: function (interfaceName, options) { //请求json等文件基础方法(接口名称，请求参数)
 		axios.get(interfaceName)
 			.then(function (response) {
-				options.callback && options.callback(response);
+				options.callback && options.callback(response.data);
 			})
 			.catch(function (error) {
 				options.errorback && options.errorback(false);

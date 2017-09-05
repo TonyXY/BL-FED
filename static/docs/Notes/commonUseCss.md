@@ -135,3 +135,35 @@ input,textarea {
 	appearance: none;
 }
 ```
+
+### 16.消除 transition 闪屏
+``` css
+{
+	-webkit-transform-style: preserve-3d;
+	/*设置内嵌的元素在 3D 空间如何呈现：保留 3D*/
+	-webkit-backface-visibility: hidden;
+	/*（设置进行转换的元素的背面在面对用户时是否可见：隐藏）*/
+}
+```
+
+### 17.改变表单控件的光标颜色
+``` css
+input,
+textarea,
+[contenteditable] {
+	color: red;
+	text-shadow: 0px 0px 0px #495057;
+	-webkit-text-fill-color: transparent;
+}
+/*caret-color部分浏览器不兼容*/
+@supports (caret-color: red) {
+	input,
+	textarea,
+	[contenteditable] {
+		color: #495057;
+		/* 文本颜色 */
+		caret-color: red;
+		/* 光标颜色 */
+	}
+}
+```
