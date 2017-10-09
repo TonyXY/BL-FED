@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "axios": "^0.16.1",
+    "babel-polyfill": "^6.26.0",
     "iview": "^2.0.0-rc.14",
     "lodash": "^4.17.4",
     "marked": "^0.3.6",

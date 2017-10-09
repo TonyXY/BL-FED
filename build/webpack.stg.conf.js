@@ -67,11 +67,12 @@ let webpackConfig = webpackMerge(commonConfig, {
             filename: process.env.NODE_ENV === 'testing' ?
                 'index.html' : config.stg.index,
             template: 'index.html',
+            webjs: config.stg.env.webjs,
             inject: true,
             minify: {
                 removeComments: true, //移除HTML中的注释
                 collapseWhitespace: true, //删除空白符与换行符
-                removeAttributeQuotes: true
+                removeAttributeQuotes: false //移除属性的引号
                 // more options:
                 // https://github.com/kangax/html-minifier#options-quick-reference
             },

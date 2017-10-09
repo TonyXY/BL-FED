@@ -36,6 +36,7 @@ let webpackConfig = webpackMerge(baseWebpackConfig, {
         new HtmlWebpackPlugin({
             filename: config.dev.index,
             template: 'index.html',
+            webjs: config.dev.env.webjs,
             inject: true
         }),
         new FriendlyErrorsPlugin()

@@ -1,0 +1,43 @@
+//参数及公用方法定义
+
+// rem 单位换算：定为 75px 只是方便运算，750px-75px、640-64px、1080px-108px，如此类推
+$vm_fontsize: 75; // iPhone 6尺寸的根元素大小基准值
+@function rem($px) {
+    @return ($px / $vm_fontsize) * 1rem;
+}
+
+// 根元素大小使用 vw 单位
+$vm_design: 750;
+//主区域宽度
+$main_width:1280px;
+//主背景色
+$mainBgColor: #f5f7f9;
+
+/* 基础布局 水平垂直居中 */
+.ib_mid_wrap {
+	font-size: 0;
+	text-align: center;
+}
+
+.ib_mid_wrap:before {
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+	width: 0;
+}
+
+.ib_mid {
+	font-size: medium;
+	*text-align: left; // 解决低版本的IE文字居右的问题
+	display: inline-block;
+	vertical-align: middle;
+}
+
+//单行溢出显示省略号
+.txa_elli {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-break: keep-all;
+}

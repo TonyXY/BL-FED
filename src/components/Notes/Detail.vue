@@ -59,7 +59,7 @@ export default {
                         idx += 1;
                         return "<h" + level + " id=\"" + slug + "\"><a href=\"#" + slug + "\" class=\"anchor\"></a>" + text + "</h" + level + ">";
                     };
-                    vm.rawHtml = marked(response.data, { renderer: renderer });
+                    vm.rawHtml = marked(response, { renderer: renderer });
                 })
             }, 
             errorback: function(error) {

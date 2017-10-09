@@ -1,7 +1,8 @@
 var merge = require('webpack-merge')
-var prodEnv = require('./prod.env')
+var stgEnv = require('./stg.env')
 
-module.exports = merge(prodEnv, {
+module.exports = merge(stgEnv, {
   NODE_ENV: '"development"',
-  API_ROOT: '"//www.baidu.com/dev/api"'
+  API_ROOT: '"//www.baidu.com/dev/api"',
+  webjs: 'https://www.baidu.com/dev/webjs.js'
 })

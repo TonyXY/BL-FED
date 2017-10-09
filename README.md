@@ -27,7 +27,11 @@ npm run e2e
 npm test
 ```
 
+For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
 ### 插件教程链接
+>* vue-cli:https://github.com/vuejs/vue-cli
+>* webpack:https://doc.webpack-china.org/guides
 >* vue: https://cn.vuejs.org/v2/guide/
 >* vuex（状态管理）: https://vuex.vuejs.org/zh-cn/
 >* vue-router（路由）: https://router.vuejs.org/zh-cn/
@@ -76,5 +80,3 @@ npm test
 ├── index.html                       // 入口页面
 └── package.json                     // 项目基本信息
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

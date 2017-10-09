@@ -6,8 +6,8 @@ module.exports = {
         env: require('./prod.env'),
         index: path.resolve(__dirname, '../dist/prod/index.html'),
         assetsRoot: path.resolve(__dirname, '../dist/prod'),
-        assetsSubDirectory: '',
-        assetsPublicPath: '/',
+        assetsSubDirectory: './',
+        assetsPublicPath: './',
         productionSourceMap: false,
         // Gzip off by default as many popular static hosts such as
         // Surge or Netlify already gzip all static assets for you.
@@ -25,8 +25,8 @@ module.exports = {
         env: require('./stg.env'),
         index: path.resolve(__dirname, '../dist/stg/index.html'),
         assetsRoot: path.resolve(__dirname, '../dist/stg'),
-        assetsSubDirectory: '',
-        assetsPublicPath: '/',
+        assetsSubDirectory: './',
+        assetsPublicPath: './',
         productionSourceMap: true,
         // Gzip off by default as many popular static hosts such as
         // Surge or Netlify already gzip all static assets for you.

@@ -6,6 +6,7 @@ import App from './App';
 import store from './store';
 import router from './router';
 import webComm from './common';
+import mydirective from './mydirective';
 window.webComm = webComm;
 
 Vue.use(iView);

@@ -1,4 +1,4 @@
-@import "common.scss";
+@import "params.scss";
 @import "reset.scss";
 @import './assets/css/iview/iview.css';
 @import './assets/css/atom-one-light.css';
@@ -20,13 +20,13 @@ body {
 
 .layout {
     min-height: 100%;
-    background: #f5f7f9;
+    background: $mainBgColor;
 }
 
 .main-width {
     position: relative;
     width: 100%;
-    max-width: 1280px;
+    max-width: $main_width;
     margin: 0 auto;
 }
 

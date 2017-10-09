@@ -79,6 +79,7 @@ let server = app.listen(port, function (err) {
         console.log(err);
         return;
     }
+    const process = require('process');
     if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
         let spawn = child_process.spawn,
             openArgs = ['-a', 'Google\ Chrome'];
@@ -92,7 +93,11 @@ let server = app.listen(port, function (err) {
         openArgs.push(uri);
         console.log('> Listening at ' + uri + '\n')
         //打开指定页面
-        spawn('open', openArgs);
+        spawn('open', openArgs, {
+            stdio: 'inherit',
+            // 仅在当前运行环境为 Windows 时，才使用 shell
+            shell: process.platform === 'win32'
+        });
     }
     _resolve()
 })

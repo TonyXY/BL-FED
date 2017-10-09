@@ -37,7 +37,7 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "../assets/css/scss/common.scss";
+@import "../assets/css/scss/params.scss";
 .top {
 	padding: 10px;
 	background: rgba(0, 153, 229, .7);

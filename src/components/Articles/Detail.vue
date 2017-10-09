@@ -15,7 +15,7 @@ export default {
         webComm.baseRequestFile('docs/Articles/' + to.params.plan + '.md', {
             callback: function(response) {
                 next(vm => {
-                    vm.rawHtml = marked(response.data);
+                    vm.rawHtml = marked(response);
                 })
             },
             errorback: function(error) {

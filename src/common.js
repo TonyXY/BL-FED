@@ -5,9 +5,35 @@
 /* eslint-disable */
 import Vue from 'vue';
 import config from './config/api';
-import axios from 'axios'; //https://github.com/mzabriskie/axios
+import axios from 'axios'; //https://github.com/mzabriskie/axios ,https://www.kancloud.cn/yunye/axios/234845
 // console.log(config.api_root);
+// 添加请求检查器
+axios.interceptors.request.use(function (config) {
+	// Do something before request is sent
+	return config;
+}, function (error) {
+	// Do something with request error
+	return Promise.reject(error);
+});
+// 添加响应检查器
+axios.interceptors.response.use(function (response) {
+	// Do something with response data
+	return response;
+}, function (error) {
+	// Do something with response error
+	return Promise.reject(error);
+});
 export default {
+	config: config,
+	os: jQBrowser,
+	getMathRandom: function () {
+		var round = Math.random();
+		if (round.toString().length > 18) {
+			return round.toString().substring(0, 18);
+		} else {
+			return round;
+		}
+	},
 	/**
 	 * @function isUndefinedOrNull
 	 * @returns return true if the object is undefined or null, otherwise return false
@@ -65,23 +91,31 @@ export default {
 	baseRequest: function (interfaceName, options) { //请求基础方法(接口名称，请求参数)
 		var baseParams = {}; //定义基础参数
 		var opt = Vue.util.extend(baseParams, options.data);
+		var qs = require('qs');
+		var headers = {
+			'Content-Type': "application/x-www-form-urlencoded;charset=UTF-8"		
+		};
+		if (options.noSessionFlag){
+			headers = {
+				'Content-Type': "application/x-www-form-urlencoded;charset=UTF-8"
+			};
+		}
 		axios({
-			method: options.method ? options.method : 'post',
-			baseURL: config.api_root,
-			url: interfaceName,
-			data: opt,
-			// headers: {
-			// 	'Content-Type': "application/json;charset=UTF-8",
-			// 	'PACES-APPLY-SESSION':""
-			// },
-			timeout: 60000,
-			withCredentials: true
-		})
+				method: options.method ? options.method : 'post',
+				baseURL: config.api_root,
+				url: interfaceName,
+				data: qs.stringify(opt),
+				headers: headers,
+				timeout: 60000,
+				withCredentials: true
+			})
 			.then(function (response) {
-				options.callback && options.callback(response.data);
+				var answ = response.data;
+				options.callback && options.callback(answ);
 			})
 			.catch(function (error) {
-				options.errorback && options.errorback(false);
+				options.errorback && options.errorback({ message:'网络异常，请稍后重试。'});
+				Promise.reject(error);
 			});
 	},
 	baseRequestFile: function (interfaceName, options) { //请求json等文件基础方法(接口名称，请求参数)
@@ -90,7 +124,8 @@ export default {
 				options.callback && options.callback(response.data);
 			})
 			.catch(function (error) {
-				options.errorback && options.errorback(false);
+				options.errorback && options.errorback({ message: '网络异常，请稍后重试。' });
+				Promise.reject(error);
 			});
 	}
 };
