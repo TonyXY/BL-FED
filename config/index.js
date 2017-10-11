@@ -49,7 +49,15 @@ module.exports = {
         closeWebSecurity:false,//是否打开chrome安全模式
         assetsSubDirectory: './',
         assetsPublicPath: '/',
-        proxyTable: {},
+        proxyTable: {//代理跨域请求
+            '/ca': {
+                target: 'https://pacesapplystg.pingan.com',
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/ca': '/ca'
+                }
+            }
+        },
         // CSS Sourcemaps off by default because relative paths are "buggy"
         // with this option, according to the CSS-Loader README
         // (https://github.com/webpack/css-loader#sourcemaps)

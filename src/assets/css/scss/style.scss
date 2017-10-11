@@ -128,23 +128,39 @@ body {
         overflow: auto;
         font-size: rem(8);
     }
+    pre {
+    	position: relative;
+    }
+    span.clipboard {
+    	border-radius: 0 0 3px 3px;
+    	padding: 2px 5px;
+    	position: absolute;
+    	top: 5px;
+        right: 5px;
+        font-size:18px;
+    	color: #b2b2b2;
+    	cursor: pointer;
+    }
     a {
         color: #42b983;
         font-weight: 600;
     }
     blockquote {
         margin: 8px 0 15px;
+        padding:5px;
         padding-left: 10px;
         border-left: 4px solid #42b983;
         background: rgb(247, 247, 247);
         p {
-            font-weight: 600;
             margin-left: 0;
             margin-bottom: 0;
             padding-bottom: 0;
         }
+        ul{
+            margin-left: 15px;
+        }
         li{
-            list-style:disc inside;
+            list-style:disc outside;
         }
         strong{
             color:#42b983;
