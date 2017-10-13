@@ -48,6 +48,7 @@ function getRouteObj(level, breadMenu) {
             name: pname,
             path: '/' + p.path,
             meta:{
+                title: p.menuName,
                 breadcrumb:currBread
             },
             component: resolve => require(['@/components/' + pname + '.vue'], resolve)

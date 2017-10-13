@@ -13,6 +13,7 @@ Vue.use(iView);
 Vue.config.productionTip = false;
 router.beforeEach((to, from, next) => {
 	iView.LoadingBar.start();
+	document.title = 'BL-FED ' + (to.meta.title ? to.meta.title:'');
 	if (to.meta.breadcrumb) {
 		store.commit('initBreadcrumb', to.meta.breadcrumb);
 	} else {
