@@ -8,16 +8,15 @@ import router from './router';
 import webComm from './common';
 import mydirective from './mydirective';
 window.webComm = webComm;
-
+window.Vue = Vue;
 Vue.use(iView);
-
 Vue.config.productionTip = false;
 router.beforeEach((to, from, next) => {
 	iView.LoadingBar.start();
 	if (to.meta.breadcrumb) {
-		store.state.breadcrumb = to.meta.breadcrumb;
+		store.commit('initBreadcrumb', to.meta.breadcrumb);
 	} else {
-		store.state.breadcrumb = [];
+		store.commit('initBreadcrumb', []);
 	}
 	next();
 });

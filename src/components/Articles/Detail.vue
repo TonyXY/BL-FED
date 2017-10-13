@@ -1,35 +1,36 @@
 <template>
-    <div v-html="rawHtml" class="markdown-content">
-    
-    </div>
+    <Markdown :mdText="mdText" v-if="show">
+    </Markdown>
 </template>
-
 <script>
+import Markdown from '@/common/Markdown';
 export default {
     data() {
         return {
-           rawHtml:''
+            mdText:'',
+            show:false
         }
     },
-    beforeRouteEnter (to, from, next) {
+    components: {
+        Markdown: Markdown
+    },
+    beforeRouteEnter(to, from, next) {
         webComm.baseRequestFile('docs/Articles/' + to.params.plan + '.md', {
             callback: function(response) {
                 next(vm => {
-                    vm.rawHtml = marked(response);
+                    vm.$store.commit('updateMdText', response);
+                    vm.show= true;
                 })
-            },
+            }, 
             errorback: function(error) {
                 next(false)
             }
         });
     },
-    computed: {
-
-    },
     methods: {
-
+        
     },
-    created:function(){
+    created: function() {
         
     }
 }

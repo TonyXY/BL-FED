@@ -24,6 +24,7 @@ marked.setOptions({
         return require('highlight.js').highlightAuto(code).value;
     }
 });
+
 Vue.use(Router);
 let children = [];
 let initBread = [{ //初始面包屑
