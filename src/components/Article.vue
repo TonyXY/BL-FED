@@ -27,6 +27,13 @@ export default {
                     plan: '20170724',
                     date: '2017-07-24'
                 } */  
+                {
+                    id: 2,
+                    name: 'JavaScript跨域总结',
+                    pname:'Articles/Detail',
+                    plan: 'cros',
+                    date: '2017-10-13'
+                }
             ]
         }
     },
