@@ -81,23 +81,27 @@ let server = app.listen(port, function (err) {
     }
     const process = require('process');
     if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
-        let spawn = child_process.spawn,
-            openArgs = ['-a', 'Google\ Chrome'];
-
-        if(config.dev.closeWebSecurity) {
-            openArgs.push('--args', '--disable-web-security', '--user-data-dir', '--user-dir');
-            //杀掉原chrome程序
-            spawn('pkill', ['-9', 'Google\ Chrome']);
-        }
-
-        openArgs.push(uri);
         console.log('> Listening at ' + uri + '\n')
-        //打开指定页面
-        spawn('open', openArgs, {
-            stdio: 'inherit',
-            // 仅在当前运行环境为 Windows 时，才使用 shell
-            shell: process.platform === 'win32'
-        });
+        if (process.platform === 'win32') {
+            opn(uri);
+        } else {
+            let spawn = child_process.spawn,
+                openArgs = ['-a', 'Google\ Chrome'];
+
+            if (config.dev.closeWebSecurity) {
+                openArgs.push('--args', '--disable-web-security', '--user-data-dir', '--user-dir');
+                //杀掉原chrome程序
+                spawn('pkill', ['-9', 'Google\ Chrome']);
+            }
+
+            openArgs.push(uri);
+            //打开指定页面
+            spawn('open', openArgs, {
+                stdio: 'inherit',
+                // 仅在当前运行环境为 Windows 时，才使用 shell
+                shell: process.platform === 'win32'
+            });
+        }
     }
     _resolve()
 })
