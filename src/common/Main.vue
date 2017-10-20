@@ -1,6 +1,6 @@
 <template>
 	<div class="main-width">
-		<Row class="layout-content">
+		<Row class="layout-content" :style="{'min-height':mainHeight+'px'}">
 			<i-col span="24">
 				<div class="layout-content-main">
 					<Breadcrumb separator=">" v-show="breadcrumb.length>0">
@@ -25,6 +25,7 @@ export default {
 	name: 'main',
 	data() {
 		return {
+			mainHeight:480
 		}
 	},
 	computed: {
@@ -32,7 +33,8 @@ export default {
 			return this.$store.state.breadcrumb;
 		}
 	},
-	created(){
+	created() {
+		this.mainHeight = document.body.offsetHeight - 132;
 	}
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
 	<div class="main-width">
-		<Row class="layout-content">
+		<Row class="layout-content" :style="{'min-height':mainHeight+'px'}">
 			<i-col span="24">
 				<div class="layout-content-main">
 					<router-view></router-view>
@@ -20,6 +20,9 @@ export default {
 		return {
 
 		}
+	},
+	created() {
+		this.mainHeight = document.body.offsetHeight - 132;
 	}
 }
 </script>

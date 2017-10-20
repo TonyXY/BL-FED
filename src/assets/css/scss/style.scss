@@ -75,7 +75,6 @@ body {
 }
 
 .layout-content {
-    min-height: 460px;
     margin: 15px;
     overflow: hidden;
     background: #fff;
@@ -96,6 +95,7 @@ body {
     li {
         font-size: rem(10);
         line-height: rem(20);
+        word-break: break-all;
         span {
             float: right;
         }

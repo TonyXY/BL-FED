@@ -25,3 +25,25 @@ openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//'
 //2.输入修改mac地址的命令：
 sudo ifconfig en0 ether xx:xx:xx:xx:xx:xx
 ```
+
+### 6.svn使用
+``` bash
+#1.先在/User/apple目录下新建一个svn目录：
+svnadmin create /Users/apple/svn/mycode
+
+#2.配置svn的用户权限
+#2.1 打开svnserve，将下列配置项前面的#和空格都去掉
+#2.2 打开passwd，在[users]下面添加帐号和密码
+#2.3 打开authz，配置用户组和权限
+
+#3.启动svn服务器:
+svnserve -d -r /Users/apple/svn
+
+#4.关闭svn服务器:打开实用工具里面的“活动监视器”,找到svnserve，退出
+
+#5.使用svn客户端功能
+#5.1 从本地导入代码到服务器(第一次初始化导入):
+svn import /Users/apple/Documents/eclipse_workspace/weibo svn://localhost/mycode/weibo --username=mj --password=123 -m "初始化导入"
+#5.2 从服务器端下载代码到客户端本地:
+svn checkout svn://localhost/mycode --username=mj --password=123 /Users/apple/Documents/code
+```
